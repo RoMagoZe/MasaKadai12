@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eIW-39-RV6" userLabel="Stack View1">
                                 <rect key="frame" x="55" y="79" width="283" height="34"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="税込金額" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccz-8R-Kq8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="税抜金額" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccz-8R-Kq8">
                                         <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -107,8 +107,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="InputNumberTextField1" destination="2t6-Ug-4GG" id="rNx-j9-Wqg"/>
-                        <outlet property="InputNumberTextField2" destination="Aok-jD-wtC" id="boy-WR-zw6"/>
+                        <outlet property="amountExclusiveOfTaxTextField" destination="2t6-Ug-4GG" id="Cho-G6-OTR"/>
+                        <outlet property="consumptionTaxRateTextField" destination="Aok-jD-wtC" id="rHz-RY-R66"/>
                         <outlet property="resultLabel" destination="ZSv-KV-0Bk" id="U2R-mQ-g85"/>
                     </connections>
                 </viewController>

@@ -9,28 +9,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet private weak var inputNumberTextField1: UITextField!
-    @IBOutlet private weak var inputNumberTextField2: UITextField!
+    /// 税抜金額
+    @IBOutlet private weak var amountExclusiveOfTaxTextField: UITextField!
+
+    /// 消費税率
+    @IBOutlet private weak var consumptionTaxRateTextField: UITextField!
+
     @IBOutlet private weak var resultLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let text = UserDefaults.standard.string(forKey: "text") {
-            inputNumberTextField2.text = text
+        if let consumptionTaxRate = UserDefaults.standard.string(forKey: "consumptionTaxRate") {
+            consumptionTaxRateTextField.text = consumptionTaxRate
         }
     }
 
     @IBAction private func calcButton(_ sender: Any) {
 
-        let numberInput1 = Double(inputNumberTextField1.text ?? "") ?? 0
-        let numberInput2 = Double(inputNumberTextField2.text ?? "") ?? 0
+        let amountExclusiveOfTax = Double(amountExclusiveOfTaxTextField.text ?? "") ?? 0
+        let consumptionTaxRate = Double(consumptionTaxRateTextField.text ?? "") ?? 0
 
-        let tax = numberInput2 * 0.01
+        let tax = consumptionTaxRate * 0.01
         let zeiritu = tax + 1.0
-        let total = (numberInput1 * zeiritu)
+        let total = (amountExclusiveOfTax * zeiritu)
 
-        UserDefaults.standard.set(inputNumberTextField2.text, forKey: "text")
+        UserDefaults.standard.set(consumptionTaxRateTextField.text, forKey: "consumptionTaxRate")
         resultLabel.text = String(format: "%.0f", total)
     }
 }
